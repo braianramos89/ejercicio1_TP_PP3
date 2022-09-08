@@ -10,7 +10,7 @@ private:
     int dia;
     int mes;
     int anio;
-    int fecha;
+
 
 public:
     Fecha(int dia, int mes, int anio);
