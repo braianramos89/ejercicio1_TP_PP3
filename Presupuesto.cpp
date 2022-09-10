@@ -6,11 +6,8 @@
 #include "Fecha.h"
 #include "stdlib.h"
 
-Presupuesto::Presupuesto(int numero, Fecha fechaVencimiento, Cliente datosCliente, string detalle, float total): datosCliente( datosCliente), fechaVencimiento( fechaVencimiento) {
+Presupuesto::Presupuesto(int numero, Fecha fechaVencimiento, Cliente datosCliente, Consumo consumo): datosCliente( datosCliente), fechaVencimiento( fechaVencimiento), consumo(consumo) {
     this->numero = numero;
-    this->detalle = detalle;
-    this->total = total;
-
 
 }
 
@@ -35,7 +32,7 @@ void Presupuesto::FechaVencimiento() {
 void Presupuesto::mostrarPresupuesto() {
     cout << "Numero: " << this->numero << endl;
     datosCliente.mostrarDatosCliente();
-    cout << "Detalle: " << this->detalle << endl;
-    cout << "Total: " << this->total << endl;
+    cout << "Detalle: " << consumo.getDetalle() << endl;
+    cout << "Total: " << consumo.getTotal() << endl;
     FechaVencimiento();
 }

@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Cliente.h"
 #include "Fecha.h"
+#include "Consumo.h"
+
 
 using namespace std;
 
@@ -12,10 +14,9 @@ private:
     int numero;
     Fecha fechaVencimiento;
     Cliente datosCliente;
-    string detalle;
-    float total;
+    Consumo consumo;
 public:
-    Presupuesto(int numero, Fecha fechaVencimiento, Cliente datosCliente, string detalle, float total);
+    Presupuesto(int numero, Fecha fechaVencimiento, Cliente datosCliente, Consumo consumo);
     ~Presupuesto();
     void mostrarPresupuesto();
     void FechaVencimiento();

@@ -10,7 +10,8 @@ int main() {
 
     Cliente cliente1("Braian", "Perez", "12345678", "Calle falsa 123");
     Fecha fecha1(29,04,2022);
-    Presupuesto presupuesto1(1, fecha1, cliente1, "Cable", 1000);
+    Consumo consumo2("Coca Cola", 100);
+    Presupuesto presupuesto1(1, fecha1, cliente1, consumo2 );
     presupuesto1.mostrarPresupuesto();
     cout<<"-----------------------------------"<<endl;
     Consumo consumo1("Cable", 1000);
