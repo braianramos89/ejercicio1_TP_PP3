@@ -4,12 +4,16 @@
 
 #include "Presupuesto.h"
 #include "Fecha.h"
-#include "stdlib.h"
 
-Presupuesto::Presupuesto(int numero, Fecha fechaVencimiento, Cliente datosCliente, Consumo consumo): datosCliente( datosCliente), fechaVencimiento( fechaVencimiento), consumo(consumo) {
+
+Presupuesto::Presupuesto(int numero, int diasVencimiento,Fecha fechaEmision, Cliente datosCliente, DetallePresupuesto detallePresupuesto): datosCliente(datosCliente), diasVencimiento(diasVencimiento),
+                                                                                                                                             fechaEmision(fechaEmision), detallePresupuesto(detallePresupuesto) {
     this->numero = numero;
 
 }
+
+
+
 
 Presupuesto::~Presupuesto() {
 
@@ -17,22 +21,21 @@ Presupuesto::~Presupuesto() {
 
 void Presupuesto::FechaVencimiento() {
 
-    int fecha = fechaVencimiento.mostrarFecha();
-    if(fecha <= 23122022){
-        int nuevaFecha = fecha + (7 * 1000000);
-        cout << "Fecha de vencimiento: " << nuevaFecha << endl;
-    }else if(fecha > 23122022 && fecha <= 31122022){
-        int nuevaFecha = fecha - (23*1000000)+(4*1000000) + (1 * 10000);
-        cout << "Fecha de vencimiento: " << nuevaFecha << endl;
-    }
-
+    int fecha = fechaEmision.mostrarFecha();
+    int fechaVencimiento = fecha + (diasVencimiento * 1000000);
+    cout << "Fecha de vencimiento: " << fechaVencimiento << endl;
 
 }
+
+
 
 void Presupuesto::mostrarPresupuesto() {
     cout << "Numero: " << this->numero << endl;
+    cout<< "Fecha de emision: " << fechaEmision.mostrarFecha() << endl;
     datosCliente.mostrarDatosCliente();
-    cout << "Detalle: " << consumo.getDetalle() << endl;
-    cout << "Total: " << consumo.getTotal() << endl;
+    detallePresupuesto.mostrarDetallePresupuesto();
     FechaVencimiento();
+
 }
+
+

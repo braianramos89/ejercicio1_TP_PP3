@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Cliente.h"
 #include "Fecha.h"
-#include "Consumo.h"
+#include "DetallePresupuesto.h"
 
 
 using namespace std;
@@ -12,19 +12,19 @@ class Presupuesto {
 
 private:
     int numero;
-    Fecha fechaVencimiento;
+    int diasVencimiento;
+    Fecha fechaEmision;
     Cliente datosCliente;
-    Consumo consumo;
+    DetallePresupuesto detallePresupuesto;
+
 public:
-    Presupuesto(int numero, Fecha fechaVencimiento, Cliente datosCliente, Consumo consumo);
+    Presupuesto(int numero, int diasVencimiento,Fecha fechaEmision, Cliente datosCliente, DetallePresupuesto detallePresupuesto);
     ~Presupuesto();
     void mostrarPresupuesto();
     void FechaVencimiento();
 
+
 };
-
-
-
 
 
 
