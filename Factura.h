@@ -18,13 +18,19 @@ private:
     Cliente datosCliente;
     DetalleFactura detalleFactura;
     float IVA;
+    Presupuesto* presupuesto = nullptr;
+
+
 
 
 public:
 
     Factura(int numero, Fecha fecha, Cliente datosCliente, DetalleFactura detalleFactura);
+    Factura(int numero, Fecha fecha, Cliente datosCliente, Presupuesto* presupuesto);
     ~Factura();
     void mostrarFactura();
+
+
 
 };
 

@@ -4,8 +4,8 @@
 
 
 
-DetalleFactura::DetalleFactura(Producto producto, float total) : producto(producto) {
-    this->total = total;
+DetalleFactura::DetalleFactura(Producto producto, float precio) : producto(producto) {
+    this->precio = precio;
 
 }
 
@@ -19,5 +19,5 @@ DetalleFactura::~DetalleFactura() {
 
 void DetalleFactura::mostrarDetalleFactura() {
     cout << "Detalle: " << producto.getDetalle() << endl;
-    cout << "SubTotal: " << this->total * producto.getCantidad() << endl;
+    cout << "SubTotal: " << this->precio * producto.getCantidad() << endl;
 }

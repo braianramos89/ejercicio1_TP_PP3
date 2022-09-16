@@ -9,10 +9,10 @@ class DetallePresupuesto {
 
 private:
     Producto producto;
-    float total;
+    float precio;
 
 public:
-    DetallePresupuesto(Producto producto, float total);
+    DetallePresupuesto(Producto producto, float precio);
     DetallePresupuesto();
     ~DetallePresupuesto();
     void mostrarDetallePresupuesto();
@@ -20,7 +20,7 @@ public:
 };
 
 inline float DetallePresupuesto::getTotalPresupuesto() {
-    return this->total;
+    return this->precio;
 }
 
 

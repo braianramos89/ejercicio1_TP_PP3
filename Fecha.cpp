@@ -15,7 +15,7 @@ Fecha::Fecha(int dia, int mes, int anio) {
 Fecha::~Fecha() {
 
 }
-
+                                //02042022
 int Fecha::mostrarFecha() {
     int fecha = (this->dia * 1000000 )+ (this->mes * 10000) +this->anio ;
     return fecha;

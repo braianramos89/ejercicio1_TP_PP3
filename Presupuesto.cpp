@@ -21,12 +21,18 @@ Presupuesto::~Presupuesto() {
 
 void Presupuesto::FechaVencimiento() {
 
-    int fecha = fechaEmision.mostrarFecha();
-    int fechaVencimiento = fecha + (diasVencimiento * 1000000);
+    int fecha = fechaEmision.mostrarFecha();//20062022
+    int fechaVencimiento = fecha + (diasVencimiento * 1000000);//10 * 1000000 = 10000000+20062022 = 30062022
     cout << "Fecha de vencimiento: " << fechaVencimiento << endl;
 
 }
 
+int Presupuesto::getFechaVencimiento() {
+
+    int fecha = fechaEmision.mostrarFecha();
+    int fechaVencimiento = fecha + (diasVencimiento * 1000000);
+    return fechaVencimiento;
+}
 
 
 void Presupuesto::mostrarPresupuesto() {

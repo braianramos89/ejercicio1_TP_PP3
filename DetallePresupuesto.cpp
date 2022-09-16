@@ -2,8 +2,8 @@
 
 
 
-DetallePresupuesto::DetallePresupuesto(Producto producto, float total) : producto(producto) {
-    this->total = total;
+DetallePresupuesto::DetallePresupuesto(Producto producto, float precio) : producto(producto) {
+    this->precio = precio;
 
 }
 
@@ -17,5 +17,5 @@ DetallePresupuesto::~DetallePresupuesto() {
 
 void DetallePresupuesto::mostrarDetallePresupuesto() {
     cout << "Detalle: " << producto.getDetalle() << endl;
-    cout << "Total: " << this->total * producto.getCantidad() << endl;
+    cout << "Total: " << this->precio * producto.getCantidad() << endl;
 }

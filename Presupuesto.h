@@ -22,9 +22,20 @@ public:
     ~Presupuesto();
     void mostrarPresupuesto();
     void FechaVencimiento();
+    Cliente getDatosCliente();
+    DetallePresupuesto getDetallePresupuesto();
+    int getFechaVencimiento();
 
 
 };
+
+inline Cliente Presupuesto::getDatosCliente() {
+    return datosCliente;
+}
+inline DetallePresupuesto Presupuesto::getDetallePresupuesto() {
+    return detallePresupuesto;
+}
+
 
 
 

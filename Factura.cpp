@@ -10,19 +10,53 @@ Factura::Factura(int numero, Fecha fecha, Cliente datosCliente, DetalleFactura d
 
 }
 
+Factura::Factura(int numero, Fecha fecha, Cliente datosCliente, Presupuesto *presupuesto): fecha(fecha),datosCliente(datosCliente),presupuesto(presupuesto) {
+
+    this->numero = numero;
+
+}
+
+
+
 Factura::~Factura() {
 
 }
 
 void Factura::mostrarFactura() {
-    cout << "Numero: " << this->numero << endl;
-    fecha.mostrarFecha();
-    datosCliente.mostrarDatosCliente();
-    detalleFactura.mostrarDetalleFactura();
-    cout << "IVA: " << this->IVA * detalleFactura.getTotal() << endl;
-    cout << "Total: " << detalleFactura.getTotal() + this->IVA * detalleFactura.getTotal() << endl;
+
+
+
+    if(presupuesto != nullptr && (presupuesto->getFechaVencimiento() < fecha.mostrarFecha() )){
+        presupuesto->mostrarPresupuesto();
+
+        presupuesto->getDetallePresupuesto() ;
+
+        cout<<"IVA incluido en el precio final " << endl;
+
+
+    }else {
+        cout << "Presupuesto vencido" << endl;
+
+    }if(presupuesto == nullptr) {
+
+        cout << "Numero: " << this->numero << endl;
+        fecha.mostrarFecha();
+        datosCliente.mostrarDatosCliente();
+        detalleFactura.mostrarDetalleFactura();
+        cout << "IVA: " << this->IVA * detalleFactura.getTotal() << endl;
+        cout << "Total: " << detalleFactura.getTotal() + this->IVA * detalleFactura.getTotal() << endl;
+    }
+
 
 }
+
+
+
+
+
+
+
+
 
 
 

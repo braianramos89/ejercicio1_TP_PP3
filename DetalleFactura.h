@@ -11,10 +11,10 @@ class DetalleFactura {
 
 private:
     Producto producto;
-    float total;
+    float precio;
 
 public:
-    DetalleFactura(Producto producto, float total);
+    DetalleFactura(Producto producto, float precio);
     DetalleFactura();
     ~DetalleFactura();
     void mostrarDetalleFactura();
@@ -23,7 +23,7 @@ public:
 
 
 inline float DetalleFactura::getTotal() {
-    return this->total * producto.getCantidad();
+    return this->precio * producto.getCantidad();
 }
 
 
