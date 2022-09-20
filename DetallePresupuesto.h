@@ -17,11 +17,20 @@ public:
     ~DetallePresupuesto();
     void mostrarDetallePresupuesto();
     float getTotalPresupuesto();
+    const Producto &getProducto() const;
+    float getPrecio() const;
 };
 
 inline float DetallePresupuesto::getTotalPresupuesto() {
     return this->precio;
 }
 
+inline const Producto &DetallePresupuesto::getProducto() const {
+    return producto;
+}
+
+inline float DetallePresupuesto::getPrecio() const {
+    return precio;
+}
 
 #endif //CONSUMO_H_DETALLEPRESUPUESTO_H
