@@ -27,6 +27,7 @@ void Factura::agregarPresupuesto(Presupuesto *presupuesto) {
 
 Factura::~Factura() {
 
+    delete this->presupuesto;
 }
 
 void Factura::mostrarFactura() {
